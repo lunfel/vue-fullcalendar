@@ -1,6 +1,12 @@
 import moment from 'moment';
 
 let dateFunc = {
+  /**
+   * @param date
+   * @param firstDay
+   *
+   * return {moment}
+   */
   getMonthViewStartDate (date, firstDay) {
     firstDay = parseInt(firstDay);
     let start = moment(date);
@@ -16,6 +22,12 @@ let dateFunc = {
 
     return start;
   },
+
+  /**
+   * @param date
+   *
+   * return {moment}
+   */
   getMonthViewEndDate (date) {
     return this.getMonthViewStartDate().add(6, 'weeks');
   }

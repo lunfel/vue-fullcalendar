@@ -64,6 +64,11 @@ let demoEvents = [
         start : '2017-03-27',
         end : '2017-03-28'
     },
+    {
+        title : 'Lunfel 5/18-5/29',
+        start : '2017-05-18T23:55:00-04:00',
+        end : '2017-05-29T01:15:00-04:00'
+    },
   ];
 
 export default {

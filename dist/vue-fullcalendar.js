@@ -627,7 +627,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var st = (0, _moment2.default)(day.start);
 	        var ed = (0, _moment2.default)(day.end ? day.end : st);
 	
-	        return date.isBetween(st, ed, null, '[]');
+	        return date.isBetween(st.startOf('day'), ed.endOf('day'), null, '[]');
 	      });
 	
 	      // sort by duration
@@ -787,6 +787,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var dateFunc = {
+	  /**
+	   * @param date
+	   * @param firstDay
+	   *
+	   * return {moment}
+	   */
 	  getMonthViewStartDate: function getMonthViewStartDate(date, firstDay) {
 	    firstDay = parseInt(firstDay);
 	    var start = (0, _moment2.default)(date);
@@ -802,6 +808,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    return start;
 	  },
+	
+	
+	  /**
+	   * @param date
+	   *
+	   * return {moment}
+	   */
 	  getMonthViewEndDate: function getMonthViewEndDate(date) {
 	    return this.getMonthViewStartDate().add(6, 'weeks');
 	  }

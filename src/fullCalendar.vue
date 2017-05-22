@@ -177,7 +177,7 @@
           let st = moment(day.start);
           let ed = moment(day.end ? day.end : st);
 
-          return date.isBetween(st, ed, null, '[]');
+          return date.isBetween(st.startOf('day'), ed.endOf('day'), null, '[]');
         });
 
         // sort by duration
