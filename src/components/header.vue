@@ -29,10 +29,10 @@
       monthNames   : {},
       locale       : String,
       leftBtnIcon  : {
-        default: ["fa", "fa-chevron-left"],
+        default: () => ["fa", "fa-chevron-left"],
       },
       rightBtnIcon : {
-        default: ["fa", "fa-chevron-right"]
+        default: () => ["fa", "fa-chevron-right"]
       }
     },
     computed: {

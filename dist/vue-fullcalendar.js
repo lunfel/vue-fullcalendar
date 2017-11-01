@@ -17848,10 +17848,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    monthNames: {},
 	    locale: String,
 	    leftBtnIcon: {
-	      default: ["fa", "fa-chevron-left"]
+	      default: function _default() {
+	        return ["fa", "fa-chevron-left"];
+	      }
 	    },
 	    rightBtnIcon: {
-	      default: ["fa", "fa-chevron-right"]
+	      default: function _default() {
+	        return ["fa", "fa-chevron-right"];
+	      }
 	    }
 	  },
 	  computed: {
