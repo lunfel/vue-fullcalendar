@@ -627,7 +627,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var st = (0, _moment2.default)(day.start);
 	        var ed = (0, _moment2.default)(day.end ? day.end : st);
 	
-	        return date.isBetween(st, ed, 'day', '[)');
+	        return date.isBetween(st, ed, 'day', '[]');
 	      });
 	
 	      // sort by duration
