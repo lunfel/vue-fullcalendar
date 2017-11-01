@@ -10,7 +10,7 @@
       @dayClick="dayClick"
       @moreClick="moreClick">
         <template slot="fc-event-card" scope="p">
-            <p><i class="fa">sadfsd</i> {{ p.event.title }} test</p>
+            <p><i class="fa"></i> -{{ p.event.title }}- </p>
         </template>
     </full-calendar>
   </div>
@@ -69,7 +69,22 @@ let demoEvents = [
         start : '2017-05-18T23:55:00-04:00',
         end : '2017-05-29T01:15:00-04:00'
     },
-  ];
+    {
+        title : 'Overlap1',
+        start : '2017-11-02T06:55:00-04:00',
+        end : '2017-11-03T14:55:00-04:00'
+    },
+    {
+        title : 'Overlap2',
+        start : '2017-11-02T06:55:00-04:00',
+        end : '2017-11-04T14:55:00-04:00'
+    },
+    {
+        title : 'Overlap3',
+        start : '2017-11-03T06:55:00-04:00',
+        end : '2017-11-04T14:55:00-04:00'
+    },
+];
 
 export default {
 	data () {
