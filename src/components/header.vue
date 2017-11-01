@@ -3,11 +3,12 @@
     <div class="header-left">
       <slot name="header-left">
       </slot>
+      <button class="prev-month btn btn-default" @click.stop="goPrev"><i :class="leftBtnIcon"></i></button>
+      <button class="next-month btn btn-default" @click.stop="goNext"><i :class="rightBtnIcon"></i></button>
+      <button class="today btn btn-default">{{ text.today }}</button>
     </div>
     <div class="header-center">
-      <span class="prev-month" @click.stop="goPrev">{{leftArrow}}</span>
       <span class="title">{{title}}</span>
-      <span class="next-month" @click.stop="goNext">{{rightArrow}}</span>
     </div>
     <div class="header-right">
       <slot name="header-right">
@@ -18,6 +19,7 @@
 <script type="text/babel">
   import dateFunc from './dateFunc'
   import moment from 'moment';
+  import lang from '../dataMap/langSets';
 
   export default {
     props : {
@@ -25,18 +27,21 @@
       titleFormat  : {},
       firstDay     : {},
       monthNames   : {},
-      locale       : {}
-    },
-    data () {
-      return {
-        leftArrow  : '<',
-        rightArrow : '>'
+      locale       : String,
+      leftBtnIcon  : {
+        default: ["fa", "fa-chevron-left"],
+      },
+      rightBtnIcon : {
+        default: ["fa", "fa-chevron-right"]
       }
     },
     computed: {
       title () {
         if (!this.currentMonth) return;
         return this.currentMonth.locale(this.locale).format('MMMM YYYY')
+      },
+      text () {
+        return lang[this.locale];
       }
     },
     methods : {
